@@ -3,5 +3,20 @@
 <div class="col-md-12">
 This is the results view.
 
-    
+    <div class="row">
+        <h2>Money put away!</h2>
+    </div>
+    <div class="row">
+        <div class="col-md-4" ng-repeat="item in products">
+            <div>Name : {{item.name}}</div>
+            <div>Color : {{item.colors[0].name}}</div>
+            <div>Retailer : {{item.retailer.name}}</div>
+            <img ng-src="{{item.image.sizes.Medium.url}}" />
+            <div>Price : {{item.price}} </div>
+
+        </div>
+        <div class="col-md-4">Item 2</div>
+        <div class="col-md-4">Item 3</div>
+
+    </div>
 </div>

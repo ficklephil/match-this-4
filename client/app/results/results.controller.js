@@ -4,6 +4,8 @@ angular.module('matchThis4App')
     .controller('ResultsCtrl', function ($scope,$rootScope, $http) {
         $scope.message = 'Hello';
 
+        $scope.products = [];
+
             console.log('cameraPalette');
             console.log($rootScope.cameraPalette);
             console.log('cameraColor');
@@ -11,5 +13,8 @@ angular.module('matchThis4App')
 
         $http.get('/api/product/red+dresses').success(function(data) {
             console.log(data);
+
+            $scope.products = data.products;
+            console.log($scope.products);
         });
     });
