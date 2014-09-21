@@ -38,13 +38,22 @@ angular.module('matchThis4App')
 
         $scope.products = [];
 
-            console.log('cameraPalette');
-            console.log($rootScope.cameraPalette);
-            console.log('cameraColor');
-            console.log($rootScope.cameraColor);
+            //REAL
+//            console.log('cameraPalette');
+//            console.log($rootScope.cameraPalette);
+//            console.log('cameraColor');
+//            console.log($rootScope.cameraColor);
+//
+//            var rgb = $rootScope.cameraColor;
+//            var hexColor = rgbToHex(rgb[0],rgb[1],rgb[2]);
+//            getColorName(hexColor);
 
-            var rgb = $rootScope.cameraColor;
-            var hexColor = rgbToHex(rgb[0],rgb[1],rgb[2]);
+            //WORKING
+            $http.get('/api/product/red+dresses').success(function(data) {
+            console.log(data);
 
-            getColorName(hexColor);
+            $scope.products = data.products;
+            console.log($scope.products);
+        });
+
     });

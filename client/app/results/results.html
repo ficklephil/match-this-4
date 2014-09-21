@@ -1,23 +1,32 @@
 <div ng-include="'components/navbar/navbar.html'"></div>
 
 <div class="col-md-12">
-<h2>I think you need matching colors that match the color : {{matchedColor}}</h2>
-<h2>Did you know that brown and green are complimentary colors to this item?</h2>
 
-    <div class="row">
-        <h2>Money put away!</h2>
+    <div class="top-box">
+
+        <h3>We think you need colors that match : {{matchedColor}}</h3>
+        <h3>Therefore we've shown you items in the color of {{matchedColor}}
+        and items in it's complementary color of : </h3>
     </div>
+
+    <h2 class="item-heading">Exact Color Matching Dresses</h2>
     <div class="row">
-        <div class="col-md-4" ng-repeat="item in products">
-            <div>Name : {{item.name}}</div>
-            <div>Color : {{item.colors[0].name}}</div>
-            <div>Retailer : {{item.retailer.name}}</div>
-            <img ng-src="{{item.image.sizes.Medium.url}}" />
-            <div>Price : {{item.price}} </div>
+
+
+        <div class="col-md-3" ng-repeat="item in products">
+            <div class="image-container">
+                <img ng-src="{{item.image.sizes.Medium.url}}" />
+            </div>
+            <div class="information-container">
+                <div class="name">{{item.name}}</div>
+                <div>Color : {{item.colors[0].name}}</div>
+                <div>Price : {{item.price}} </div>
+                <button>Reserve item at {{item.retailer.name}}</button>
+                <button>Delivery item to Westfield Click and Collect hub</button>
+            </div>
+
 
         </div>
-        <div class="col-md-4">Item 2</div>
-        <div class="col-md-4">Item 3</div>
 
     </div>
 </div>

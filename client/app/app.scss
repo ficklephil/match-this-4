@@ -24,6 +24,7 @@ $fa-font-path: "/bower_components/font-awesome/fonts";
 // endinjector
 
 
+
 .video-container{
 
   width: 900px;
@@ -58,9 +59,52 @@ $fa-font-path: "/bower_components/font-awesome/fonts";
 
 }
 
-
+.top-box{
+  border:1px soild red;
+}
 
 .navbar{
   margin-bottom:0px;
 }
 
+.col-md-3{
+  border:1px solid red;
+}
+
+.item-heading{
+//  border:1px solid yellow;
+  padding: 0;
+  margin: 0;
+  background-color: #1e1e1e;
+  color: #efefef;
+  padding: 35px;
+}
+
+.top-box{
+//  border:1px solid red;
+  padding: 10px 25px 25px 25px;
+  background-color: #ef6d3b;
+  color: #efefef;
+}
+
+.image-container{
+  border:1px solid blue;
+  width:100%;
+  padding: 25px;
+
+  img{
+    border:1px solid green;
+    margin: auto 0;
+  }
+}
+
+.information-container{
+  border:1px solid yellow;
+  text-align: center;
+  padding: 10px;
+
+  .name {
+    border:1px solid blue;
+    font-weight: bold;
+  }
+}
