@@ -38,6 +38,7 @@ angular.module('matchThis4App')
             });
 
             $scope.complimentaryColor = getComplimentaryColor(colorToMatch);
+            console.log($scope.complimentaryColor);
 
             $http.get('/api/product/'+$scope.complimentaryColor+'+dresses').success(function(data) {
                 console.log(data);
@@ -47,6 +48,7 @@ angular.module('matchThis4App')
             });
 
             $scope.complimentarySecondColor = getSecondComplimentaryColor(colorToMatch);
+            console.log($scope.complimentarySecondColor);
 
             $http.get('/api/product/'+$scope.complimentarySecondColor+'+dresses').success(function(data) {
                 console.log(data);
@@ -57,24 +59,39 @@ angular.module('matchThis4App')
         }
 
         function getComplimentaryColor(color){
-            if(color === 'brown'){
-                return 'green';
-            }else if(color === 'blue'){
-                return 'green';
-            }else if(color === 'red'){
-                return 'green';
+            console.log('getComplimentaryColor');
+            console.log(color);
+
+            if(color == 'Brown'){
+                return 'red';
+            }else if(color === 'Orange'){
+                return 'red';
+            }else if(color === 'Yellow'){
+                return 'white';
+            }else if(color === 'Red'){
+                return 'white';
+            }else if(color === 'Purple'){
+                return 'blue';
+            }else if(color === 'Blue'){
+                return 'white';
             }else{
                 return 'green';
             }
         }
 
         function getSecondComplimentaryColor(color){
-            if(color === 'brown'){
+            if(color == 'Brown'){
+                return 'yellow';
+            }else if(color === 'Orange'){
+                return 'brown';
+            }else if(color === 'Yellow'){
                 return 'green';
-            }else if(color === 'blue'){
-                return 'green';
-            }else if(color === 'red'){
-                return 'green';
+            }else if(color === 'Red'){
+                return 'black';
+            }else if(color === 'Purple'){
+                return 'white';
+            }else if(color === 'Blue'){
+                return 'black';
             }else{
                 return 'green';
             }
