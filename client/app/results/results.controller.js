@@ -22,8 +22,15 @@ angular.module('matchThis4App')
             console.log('coloris :' +  String(n_match[3]));
 
             $scope.matchedColor = String(n_match[3]);
+            $scope.matchedColorHex = String(n_match[2]);
+
+
 
             var colorToMatch = String(n_match[3]);
+            console.log('colorToMatch' + colorToMatch);
+            console.log(colorToMatch);
+
+//            setHeaderColor($scope.matchedColorHex);
 
             $http.get('/api/product/'+colorToMatch+'+dresses').success(function(data) {
                 console.log(data);
@@ -33,27 +40,31 @@ angular.module('matchThis4App')
             });
         }
 
+        function setHeaderColor(colorToMatch){
+            $('.top-box').css('background-color',colorToMatch);
+
+        }
 
         $scope.message = 'Hello';
 
         $scope.products = [];
 
             //REAL
-//            console.log('cameraPalette');
-//            console.log($rootScope.cameraPalette);
-//            console.log('cameraColor');
-//            console.log($rootScope.cameraColor);
-//
-//            var rgb = $rootScope.cameraColor;
-//            var hexColor = rgbToHex(rgb[0],rgb[1],rgb[2]);
-//            getColorName(hexColor);
+            console.log('cameraPalette');
+            console.log($rootScope.cameraPalette);
+            console.log('cameraColor');
+            console.log($rootScope.cameraColor);
+
+            var rgb = $rootScope.cameraColor;
+            var hexColor = rgbToHex(rgb[0],rgb[1],rgb[2]);
+            getColorName(hexColor);
 
             //WORKING
-            $http.get('/api/product/red+dresses').success(function(data) {
-            console.log(data);
-
-            $scope.products = data.products;
-            console.log($scope.products);
-        });
+//            $http.get('/api/product/red+dresses').success(function(data) {
+//            console.log(data);
+//
+//            $scope.products = data.products;
+//            console.log($scope.products);
+//            });
 
     });
