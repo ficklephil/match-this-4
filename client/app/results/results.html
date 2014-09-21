@@ -9,10 +9,8 @@
         and items in it's complementary color of : </h3>
     </div>
 
-    <h2 class="item-heading">Exact Color Matching Dresses</h2>
+    <h2 class="item-heading">Exact Color Matching Dresses ( {{matchedColor}} )</h2>
     <div class="row">
-
-
         <div class="col-md-3" ng-repeat="item in products">
             <div class="image-container">
                 <img ng-src="{{item.image.sizes.Medium.url}}" />
@@ -24,9 +22,22 @@
                 <button>Reserve item at {{item.retailer.name}}</button>
                 <button>Delivery item to Westfield Click and Collect hub</button>
             </div>
-
-
         </div>
+    </div>
 
+    <h2 class="item-heading">Complementary Color ( {{complimentaryColor}} )</h2>
+    <div class="row">
+        <div class="col-md-3" ng-repeat="item in complimentaryColoredProducts">
+            <div class="image-container">
+                <img ng-src="{{item.image.sizes.Medium.url}}" />
+            </div>
+            <div class="information-container">
+                <div class="name">{{item.name}}</div>
+                <div>Color : {{item.colors[0].name}}</div>
+                <div>Price : {{item.price}} </div>
+                <button>Reserve item at {{item.retailer.name}}</button>
+                <button>Delivery item to Westfield Click and Collect hub</button>
+            </div>
+        </div>
     </div>
 </div>

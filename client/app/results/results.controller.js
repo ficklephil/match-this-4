@@ -18,19 +18,17 @@ angular.module('matchThis4App')
             var n_match = ntc.name(hexColor);
             var n_name = n_match[1];
 
-//            console.log(n_match);
             console.log('coloris :' +  String(n_match[3]));
 
             $scope.matchedColor = String(n_match[3]);
             $scope.matchedColorHex = String(n_match[2]);
 
-
-
             var colorToMatch = String(n_match[3]);
-            console.log('colorToMatch' + colorToMatch);
-            console.log(colorToMatch);
 
-//            setHeaderColor($scope.matchedColorHex);
+            requestData(colorToMatch);
+        }
+
+        function requestData(colorToMatch){
 
             $http.get('/api/product/'+colorToMatch+'+dresses').success(function(data) {
                 console.log(data);
@@ -38,6 +36,27 @@ angular.module('matchThis4App')
                 $scope.products = data.products;
                 console.log($scope.products);
             });
+
+            $scope.complimentaryColor = getComplimentaryColor(colorToMatch);
+
+            $http.get('/api/product/'+$scope.complimentaryColor+'+dresses').success(function(data) {
+                console.log(data);
+
+                $scope.complimentaryColoredProducts = data.products;
+                console.log($scope.complimentaryColoredProducts);
+            });
+        }
+
+        function getComplimentaryColor(color){
+            if(color === 'brown'){
+                return 'green';
+            }else if(color === 'blue'){
+                return 'green';
+            }else if(color === 'red'){
+                return 'green';
+            }else{
+                return 'green';
+            }
         }
 
         function setHeaderColor(colorToMatch){
