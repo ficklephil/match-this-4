@@ -69,6 +69,7 @@ $fa-font-path: "/bower_components/font-awesome/fonts";
 
 .col-md-3{
   border:1px solid red;
+  height: 400px;
 }
 
 .item-heading{
@@ -91,6 +92,7 @@ $fa-font-path: "/bower_components/font-awesome/fonts";
   border:1px solid blue;
   width:100%;
   padding: 25px;
+  text-align: center;
 
   img{
     border:1px solid green;
@@ -106,5 +108,10 @@ $fa-font-path: "/bower_components/font-awesome/fonts";
   .name {
     border:1px solid blue;
     font-weight: bold;
+  }
+
+  button{
+    margin-bottom: 5px;
+    margin-top: 5px;
   }
 }
