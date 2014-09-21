@@ -46,13 +46,13 @@ angular.module('matchThis4App')
         $state.go('results');
     };
 
-    $scope.getShopSense = function(){
-        console.log('In shop sense.');
-
-        $http.get('/api/product/red+dresses').success(function(data) {
-            console.log(data);
-        });
-    };
+//    $scope.getShopSense = function(){
+//        console.log('In shop sense.');
+//
+//        $http.get('/api/product/red+dresses').success(function(data) {
+//            console.log(data);
+//        });
+//    };
 
     $http.get('/api/things').success(function(awesomeThings) {
       $scope.awesomeThings = awesomeThings;
