@@ -34,10 +34,9 @@ angular.module('matchThis4App')
         }
 
 
+        var colorThief = new ColorThief();
 
     $scope.snap = function(){
-
-        var colorThief = new ColorThief();
 
         context.drawImage(video, 0, 0, 1, 1);
         var canvasImage = new CanvasImage(canvas);
@@ -45,7 +44,6 @@ angular.module('matchThis4App')
         $rootScope.cameraPalette = colorThief.getPalette(canvasImage);
         $rootScope.cameraColor = colorThief.getColor(canvasImage);
 
-        $interval.cancel();
         $state.go('results');
 
     };
@@ -53,15 +51,15 @@ angular.module('matchThis4App')
         var colorThief = new ColorThief();
 
         //loop
-        $interval(getPictureColor, 2000);
+        $interval(getPictureColor, 50);
 
         function getPictureColor(){
 
             try{
                 context.drawImage(video, 0, 0, 1, 1);
                 var canvasImage = new CanvasImage(document.getElementById("canvas"));
-                console.log(colorThief.getColor(canvasImage));
-                $('.match-this-button').css('background-color','#ffcc00');
+                var colorItem = colorThief.getColor(canvasImage);
+                $('.match-this-button').css('background-color','rgb('+colorItem[0]+','+colorItem[1]+','+colorItem[2]+')');
 
             }catch(err){
                 console.log('Video not there yet!');

@@ -30,12 +30,12 @@ $fa-font-path: "/bower_components/font-awesome/fonts";
   position: relative;
 
   video{
-    border:1px solid green;
+//    border:1px solid green;
   }
 
   .match-this-button{
     position: absolute;
-    border:1px solid red;
+//    border:1px solid red;
     width:130px;
     height:130px;
     background-color: #990000;
@@ -48,8 +48,9 @@ $fa-font-path: "/bower_components/font-awesome/fonts";
 
     .match-this-text{
       padding-top: 49px;
-      border:1px solid blue;
-      text-color: brown;
+//      border:1px solid blue;
+      color: white;
+      font-size:18px;
       text-align: center;
     }
   }
