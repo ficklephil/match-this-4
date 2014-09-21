@@ -16,8 +16,19 @@ angular.module('matchThis4App')
             var n_match = ntc.name(hexColor);
             var n_name = n_match[1];
 
-            console.log(n_name);
+//            console.log(n_match);
+//            console.log('coloris :' +  String(n_match[3]));
+
+            var colorToMatch = String(n_match[3]);
+
+            $http.get('/api/product/'+colorToMatch+'+dresses').success(function(data) {
+                console.log(data);
+
+                $scope.products = data.products;
+                console.log($scope.products);
+            });
         }
+
 
         $scope.message = 'Hello';
 
@@ -31,15 +42,5 @@ angular.module('matchThis4App')
             var rgb = $rootScope.cameraColor;
             var hexColor = rgbToHex(rgb[0],rgb[1],rgb[2]);
 
-            console.log(getColorName(hexColor));
-
-            
-
-
-//        $http.get('/api/product/yellow+dresses').success(function(data) {
-//            console.log(data);
-//
-//            $scope.products = data.products;
-//            console.log($scope.products);
-//        });
+            getColorName(hexColor);
     });
