@@ -45,9 +45,30 @@ angular.module('matchThis4App')
                 $scope.complimentaryColoredProducts = data.products;
                 console.log($scope.complimentaryColoredProducts);
             });
+
+            $scope.complimentarySecondColor = getSecondComplimentaryColor(colorToMatch);
+
+            $http.get('/api/product/'+$scope.complimentarySecondColor+'+dresses').success(function(data) {
+                console.log(data);
+
+                $scope.complimentarySecondaryColoredProducts = data.products;
+                console.log($scope.complimentarySecondaryColoredProducts);
+            });
         }
 
         function getComplimentaryColor(color){
+            if(color === 'brown'){
+                return 'green';
+            }else if(color === 'blue'){
+                return 'green';
+            }else if(color === 'red'){
+                return 'green';
+            }else{
+                return 'green';
+            }
+        }
+
+        function getSecondComplimentaryColor(color){
             if(color === 'brown'){
                 return 'green';
             }else if(color === 'blue'){
