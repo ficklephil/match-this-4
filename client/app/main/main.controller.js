@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('matchThis4App')
-  .controller('MainCtrl', function ($scope, $http) {
+  .controller('MainCtrl', function ($scope,$rootScope, $state, $http, CameraColors) {
     $scope.awesomeThings = [];
 
         //HTML5 VIDEO
@@ -40,10 +40,10 @@ angular.module('matchThis4App')
         context.drawImage(video, 0, 0, 640, 480);
         var canvasImage = new CanvasImage(canvas);
 
-        console.log(colorThief.getColor(canvasImage));
-        console.log(colorThief.getPalette(canvasImage));
+        $rootScope.cameraPalette = colorThief.getPalette(canvasImage);
+        $rootScope.cameraColor = colorThief.getColor(canvasImage);
 
-        $scope.getShopSense();
+        $state.go('results');
     };
 
     $scope.getShopSense = function(){
