@@ -3,7 +3,7 @@
 angular.module('matchThis4App')
   .controller('NavbarCtrl', function ($scope, $location) {
     $scope.menu = [{
-      'title': 'Home',
+      'title': 'Camera',
       'link': '/'
     }];
 

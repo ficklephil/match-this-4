@@ -3,6 +3,8 @@
 angular.module('matchThis4App')
     .controller('ResultsCtrl', function ($scope,$rootScope, $http) {
 
+        $scope.matchedColor = '';
+
         function componentToHex(c) {
             var hex = c.toString(16);
             return hex.length == 1 ? "0" + hex : hex;
@@ -17,7 +19,9 @@ angular.module('matchThis4App')
             var n_name = n_match[1];
 
 //            console.log(n_match);
-//            console.log('coloris :' +  String(n_match[3]));
+            console.log('coloris :' +  String(n_match[3]));
+
+            $scope.matchedColor = String(n_match[3]);
 
             var colorToMatch = String(n_match[3]);
 

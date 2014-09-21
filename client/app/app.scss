@@ -22,3 +22,44 @@ $fa-font-path: "/bower_components/font-awesome/fonts";
 @import 'results/results.scss';
 @import 'modal/modal.scss';
 // endinjector
+
+
+.video-container{
+
+  width: 900px;
+  position: relative;
+
+  video{
+    border:1px solid green;
+  }
+
+  .match-this-button{
+    position: absolute;
+    border:1px solid red;
+    width:130px;
+    height:130px;
+    background-color: #990000;
+    bottom: 30px;
+    left:50px;
+    cursor: pointer;
+    cursor: hand;
+    border-radius: 50%;
+
+
+    .match-this-text{
+      padding-top: 49px;
+      border:1px solid blue;
+      text-color: brown;
+      text-align: center;
+    }
+  }
+
+
+}
+
+
+
+.navbar{
+  margin-bottom:0px;
+}
+
