@@ -50,7 +50,7 @@ angular.module('matchThis4App')
             $scope.complimentarySecondColor = getSecondComplimentaryColor(colorToMatch);
             console.log($scope.complimentarySecondColor);
 
-            $http.get('/api/product/'+$scope.complimentarySecondColor+'+dresses').success(function(data) {
+            $http.get('/api/product/'+$scope.complimentarySecondColor+'+accessories').success(function(data) {
                 console.log(data);
 
                 $scope.complimentarySecondaryColoredProducts = data.products;
@@ -74,6 +74,8 @@ angular.module('matchThis4App')
                 return 'blue';
             }else if(color === 'Blue'){
                 return 'white';
+            }else if(color === 'Grey'){
+                return 'white';
             }else{
                 return 'green';
             }
@@ -91,6 +93,8 @@ angular.module('matchThis4App')
             }else if(color === 'Purple'){
                 return 'white';
             }else if(color === 'Blue'){
+                return 'black';
+            }else if(color === 'Grey'){
                 return 'black';
             }else{
                 return 'green';
